@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model;
+
 import java.util.ArrayList;
+
 /**
  *
  * @author FJML1983
@@ -23,20 +25,18 @@ public class Bullbasaur extends Pokemon {
     }
 
     //Constructor alterno 1
-    public Bullbasaur(String nombre){
+    public Bullbasaur(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
-    
-       public void atacar(Pokemon oponente, String habilidad){
-         if(habilidad.equals("LÁTIGO CEPA")){
-            //Logica del daño por atacktrueno
+
+    public void atacar(Pokemon oponente, String habilidad) {
+        if (habilidad.equals("LÁTIGO CEPA")) {
             System.out.println("Realizando LÁTIGO CEPA");
-        }else if(habilidad.equals("HOJA AFILADA")){
-            //Logica del daño por BOLAVOLTIO
-            System.out.println("Realizando HOJA AFILADA");            
+        } else if (habilidad.equals("HOJA AFILADA")) {
+            System.out.println("Realizando HOJA AFILADA");
         }
         //TODO: otras habilidades...
     }
-    
+
 }

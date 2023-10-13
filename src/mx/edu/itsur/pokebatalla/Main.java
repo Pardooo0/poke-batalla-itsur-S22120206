@@ -10,8 +10,13 @@ import mx.edu.itsur.pokebatalla.model.Charmander;
 import mx.edu.itsur.pokebatalla.model.Charmeleon;
 import mx.edu.itsur.pokebatalla.model.Wartortle;
 import mx.edu.itsur.pokebatalla.model.Ivysaur;
+import mx.edu.itsur.pokebatalla.model.Abra;
+import mx.edu.itsur.pokebatalla.model.Machop;
+import mx.edu.itsur.pokebatalla.model.Gengar;
+import mx.edu.itsur.pokebatalla.model.Exeggcute;
+import mx.edu.itsur.pokebatalla.model.Butterfree;
+import mx.edu.itsur.pokebatalla.model.Jigglypuff;
 import mx.edu.itsur.pokebatalla.model.Pokemon;
-
 /**
  *
  * @author FJML1983

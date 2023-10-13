@@ -33,10 +33,10 @@ public class Ivysaur extends Pokemon {
 
     public void atacar(Pokemon oponente, String habilidad) {
         if (habilidad.equals("LÁTIGO CEPA")) {
-            //Logica del daño por atacktrueno
+
             System.out.println("Realizando LÁTIGO CEPA");
         } else if (habilidad.equals("POLVO VENENO")) {
-            //Logica del daño por BOLAVOLTIO
+
             System.out.println("Realizando POLVO VENENO");
         }
         //TODO: otras habilidades...

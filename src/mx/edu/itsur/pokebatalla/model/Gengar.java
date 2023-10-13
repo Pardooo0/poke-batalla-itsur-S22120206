@@ -8,33 +8,33 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FJML1983
+ * @author DIEGO JAVIER OROZCO AGUIRRE
  */
-public class Charmander extends Pokemon {
+public class Gengar extends Pokemon {
 
-    public Charmander() {
-        this.tipo = "FUEGO";
-        this.hp = 39;
-        this.ataque = 52;
-        this.defensa = 43;
+    public Gengar() {
+        this.tipo = "FANTASMA/VENENO";
+        this.hp = 60;
+        this.ataque = 65;
+        this.defensa = 60;
         this.nivel = 1;
-        this.precision = 4;
+        this.precision = 5;
         this.habilidades = new ArrayList<>();
-        this.habilidades.add("ASCUAS");
-        this.habilidades.add("COLMILLO ÍGNEO");
+        this.habilidades.add("PUÑO SOMBRA");
+        this.habilidades.add("BOMBA ACIDA");
     }
 
     //Constructor alterno 1
-    public Charmander(String nombre) {
+    public Gengar(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
 
     public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("ASCUAS")) {
-            System.out.println("Realizando ASCUAS");
-        } else if (habilidad.equals("COLMILLO ÍGNEO")) {
-            System.out.println("Realizando COLMILLO ÍGNEO");
+        if (habilidad.equals("PUÑO SOMBRA")) {
+            System.out.println("Realizando PUÑO SOMBRA");
+        } else if (habilidad.equals("BOMBA ACIDA")) {
+            System.out.println("Realizando BOMBA ACIDA");
         }
         //TODO: otras habilidades...
     }

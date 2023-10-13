@@ -8,33 +8,33 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FJML1983
+ * @author RAFAEL CASTRO TINOCO
  */
-public class Charmander extends Pokemon {
+public class Abra extends Pokemon {
 
-    public Charmander() {
-        this.tipo = "FUEGO";
-        this.hp = 39;
-        this.ataque = 52;
-        this.defensa = 43;
+    public Abra() {
+        this.tipo = "PSIQUICO";
+        this.hp = 25;
+        this.ataque = 20;
+        this.defensa = 15;
         this.nivel = 1;
-        this.precision = 4;
+        this.precision = 5;
         this.habilidades = new ArrayList<>();
-        this.habilidades.add("ASCUAS");
-        this.habilidades.add("COLMILLO ÍGNEO");
+        this.habilidades.add("TELETRANSPORTE");
+        this.habilidades.add("PLACAJE");
     }
 
     //Constructor alterno 1
-    public Charmander(String nombre) {
+    public Abra(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
 
     public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("ASCUAS")) {
-            System.out.println("Realizando ASCUAS");
-        } else if (habilidad.equals("COLMILLO ÍGNEO")) {
-            System.out.println("Realizando COLMILLO ÍGNEO");
+        if (habilidad.equals("TELETRANSPORTE")) {
+            System.out.println("Realizando TELETRANSPORTE");
+        } else if (habilidad.equals("PLACAJE")) {
+            System.out.println("Realizando PLACAJE");
         }
         //TODO: otras habilidades...
     }

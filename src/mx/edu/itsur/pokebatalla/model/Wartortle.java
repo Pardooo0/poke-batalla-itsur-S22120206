@@ -33,10 +33,8 @@ public class Wartortle extends Pokemon {
 
     public void atacar(Pokemon oponente, String habilidad) {
         if (habilidad.equals("PISTOLA AGUA")) {
-            //Logica del daño por atacktrueno
             System.out.println("Realizando PISTOLA AGUA");
         } else if (habilidad.equals("HIDROBOMBA")) {
-            //Logica del daño por BOLAVOLTIO
             System.out.println("Realizando HIDROBOMBA");
         }
         //TODO: otras habilidades...

@@ -33,10 +33,8 @@ public class Charmeleon extends Pokemon {
 
     public void atacar(Pokemon oponente, String habilidad) {
         if (habilidad.equals("LANZA LLAMAS")) {
-            //Logica del daño por atacktrueno
             System.out.println("Realizando LANZA LLAMAS");
         } else if (habilidad.equals("COLMILLO ÍGNEO")) {
-            //Logica del daño por BOLAVOLTIO
             System.out.println("Realizando COLMILLO ÍGNEO");
         }
         //TODO: otras habilidades...

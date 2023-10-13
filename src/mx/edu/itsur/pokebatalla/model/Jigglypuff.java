@@ -8,33 +8,35 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FJML1983
+ * @author RAFAEL CASTRO TINOCO
  */
-public class Charmander extends Pokemon {
+public class Jigglypuff extends Pokemon {
 
-    public Charmander() {
-        this.tipo = "FUEGO";
-        this.hp = 39;
-        this.ataque = 52;
-        this.defensa = 43;
+    public Jigglypuff() {
+        this.tipo = "NORMAL/HADA";
+        this.hp = 115;
+        this.ataque = 45;
+        this.defensa = 20;
         this.nivel = 1;
         this.precision = 4;
         this.habilidades = new ArrayList<>();
-        this.habilidades.add("ASCUAS");
-        this.habilidades.add("COLMILLO ÍGNEO");
+        this.habilidades.add("DESTRUCTOR");
+        this.habilidades.add("BRILLO MÁGICO");
+        //....
     }
 
     //Constructor alterno 1
-    public Charmander(String nombre) {
+    public Jigglypuff(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
 
     public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("ASCUAS")) {
-            System.out.println("Realizando ASCUAS");
-        } else if (habilidad.equals("COLMILLO ÍGNEO")) {
-            System.out.println("Realizando COLMILLO ÍGNEO");
+        if (habilidad.equals("DESTRUCTOR")) {
+            System.out.println("Realizando DESTRUCTOR");
+
+        } else if (habilidad.equals("BRILLO MÁGICO")) {
+            System.out.println("Realizando BRILLO MÁGICO");
         }
         //TODO: otras habilidades...
     }
