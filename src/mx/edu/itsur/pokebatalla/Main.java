@@ -4,19 +4,19 @@
  */
 package mx.edu.itsur.pokebatalla;
 
-import mx.edu.itsur.pokebatalla.model.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.Pikachu;
-import mx.edu.itsur.pokebatalla.model.Charmander;
-import mx.edu.itsur.pokebatalla.model.Charmeleon;
-import mx.edu.itsur.pokebatalla.model.Wartortle;
-import mx.edu.itsur.pokebatalla.model.Ivysaur;
-import mx.edu.itsur.pokebatalla.model.Abra;
-import mx.edu.itsur.pokebatalla.model.Machop;
-import mx.edu.itsur.pokebatalla.model.Gengar;
-import mx.edu.itsur.pokebatalla.model.Exeggcute;
-import mx.edu.itsur.pokebatalla.model.Butterfree;
-import mx.edu.itsur.pokebatalla.model.Jigglypuff;
-import mx.edu.itsur.pokebatalla.model.Pokemon;
+import mx.edu.itsur.pokebatalla.model.pokemons.Bullbasaur;
+import mx.edu.itsur.pokebatalla.model.pokemons.Pikachu;
+import mx.edu.itsur.pokebatalla.model.pokemons.Charmander;
+import mx.edu.itsur.pokebatalla.model.pokemons.Charmeleon;
+import mx.edu.itsur.pokebatalla.model.pokemons.Wartortle;
+import mx.edu.itsur.pokebatalla.model.pokemons.Ivysaur;
+import mx.edu.itsur.pokebatalla.model.pokemons.Abra;
+import mx.edu.itsur.pokebatalla.model.pokemons.Machop;
+import mx.edu.itsur.pokebatalla.model.pokemons.Gengar;
+import mx.edu.itsur.pokebatalla.model.pokemons.Exeggcute;
+import mx.edu.itsur.pokebatalla.model.pokemons.Butterfree;
+import mx.edu.itsur.pokebatalla.model.pokemons.Jigglypuff;
+import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 /**
  *
  * @author FJML1983
