@@ -7,8 +7,14 @@ package mx.edu.itsur.pokebatalla.model.moves;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
+ * Un movimiento o ataque (Move en inglés; わざ Movimiento en japonés) es una
+ * técnica que los Pokémon son capaces de aprender y que usan en los combates
+ * con el fin de debilitar a sus oponentes. Este contenido proviene de
+ * wikidex.net, y debe darse atribución a sus autores, tal como especifica la
+ * licencia. Se prohíbe su uso a PlagioDex (el wiki de FANDOOM), por copiar
+ * reiteradamente sin dar atribución https://www.wikidex.net/wiki/Movimiento
  *
- * @author LMC Alumno
+ * @author RAFAEL CASTRO TINOCO
  */
 public class Movimiento {
 
@@ -30,13 +36,13 @@ public class Movimiento {
         VENENO,
         VOLADOR
     }
-
+    //atributos
     protected TiposDeMovimiento tipo;
-    protected String clase;
     protected int potencia;
     protected int precision;
     protected int puntosPoder;
 
+    //metodos
     public void utilizar(Pokemon usuario, Pokemon objetivo) {
 
     }

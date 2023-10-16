@@ -20,6 +20,9 @@ public class Pokemon {
     protected int ataque;
     protected int defensa;
     protected double precision;
+//    protected List<String>movimientosEspeciales;
+//    protected List<String>movimientosFisicos;
+//    protected List<String>movimientosEstado;
     protected List<String> habilidades;
 
     Pokemon() {

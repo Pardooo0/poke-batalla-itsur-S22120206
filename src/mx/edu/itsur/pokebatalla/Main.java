@@ -17,6 +17,7 @@ import mx.edu.itsur.pokebatalla.model.pokemons.Exeggcute;
 import mx.edu.itsur.pokebatalla.model.pokemons.Butterfree;
 import mx.edu.itsur.pokebatalla.model.pokemons.Jigglypuff;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
+
 /**
  *
  * @author FJML1983

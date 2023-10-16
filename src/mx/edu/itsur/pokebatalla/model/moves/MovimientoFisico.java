@@ -5,10 +5,10 @@
 package mx.edu.itsur.pokebatalla.model.moves;
 
 /**
- * Es una clase de movimiento de caracteristicas especiales
+ * Es una clase de movimiento con impacto fisico
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class MovimientoEspecial extends Movimiento {
+public class MovimientoFisico extends Movimiento {
 
 }
