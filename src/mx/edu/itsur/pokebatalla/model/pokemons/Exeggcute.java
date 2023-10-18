@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.Bombardeo;
 
 /**
  *
@@ -18,10 +18,7 @@ public class Exeggcute extends Pokemon {
         this.defensa = 80;
         this.nivel = 1;
         this.precision = 3;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("BOMBA GERMEN");
-        this.habilidades.add("CONFUSIÓN");
-        //....
+        this.movimientos.add(new Bombardeo());
     }
 
     //Constructor alterno 1

@@ -6,16 +6,14 @@ package mx.edu.itsur.pokebatalla.model.moves;
 
 /**
  *
- * @author LMC Alumno
+ * @author RAFAEL CASTRO TINOCO
  */
-public class AtaqueRapido extends MovimientoFisico {
+public class Ascuas extends MovimientoEspecial {
 
-    public AtaqueRapido() {
-        this.tipo = TiposDeMovimiento.NORMAL;
+    public Ascuas() {
+        this.tipo = Movimiento.TiposDeMovimiento.FUEGO;
         this.potencia = 40;
         this.precision = 100;
-        this.puntosPoder = 30;
-
+        this.puntosPoder = 25;
     }
-
 }

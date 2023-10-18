@@ -4,7 +4,8 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 
 /**
  *
@@ -19,9 +20,8 @@ public class Gengar extends Pokemon {
         this.defensa = 60;
         this.nivel = 1;
         this.precision = 5;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("PUÑO SOMBRA");
-        this.habilidades.add("BOMBA ACIDA");
+        this.movimientos.add(new BolaSombra());
+        this.movimientos.add(new AtaqueRapido());
     }
 
     //Constructor alterno 1

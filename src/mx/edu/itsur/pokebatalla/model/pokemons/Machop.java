@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -19,9 +19,7 @@ public class Machop extends Pokemon {
         this.defensa = 50;
         this.nivel = 1;
         this.precision = 3;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("GOLPE ROCA");
-        this.habilidades.add("ULTRAPUÑO");
+ 
     }
 
     //Constructor alterno 1

@@ -5,7 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -20,9 +20,7 @@ public class Wartortle extends Pokemon {
         this.defensa = 80;
         this.nivel = 16;
         this.precision = 5;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("PISTOLA AGUA");
-        this.habilidades.add("HIDROBOMBA");
+       
     }
 
     //Constructor alterno 1

@@ -5,7 +5,8 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.Ascuas;
 
 /**
  *
@@ -20,9 +21,8 @@ public class Charmeleon extends Pokemon {
         this.defensa = 58;
         this.nivel = 16;
         this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("LANZA LLAMAS");
-        this.habilidades.add("COLMILLO ÍGNEO");
+        this.movimientos.add(new AtaqueRapido());
+        this.movimientos.add(new Ascuas());
     }
 
     //Constructor alterno 1

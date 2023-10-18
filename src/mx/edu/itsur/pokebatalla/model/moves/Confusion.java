@@ -8,14 +8,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author LMC Alumno
  */
-public class AtaqueRapido extends MovimientoFisico {
+public class Confusion extends MovimientoEspecial {
 
-    public AtaqueRapido() {
-        this.tipo = TiposDeMovimiento.NORMAL;
-        this.potencia = 40;
+    public Confusion() {
+        this.tipo = Movimiento.TiposDeMovimiento.PSIQUICO;
+        this.potencia = 50;
         this.precision = 100;
-        this.puntosPoder = 30;
+        this.puntosPoder = 25;
 
     }
-
 }

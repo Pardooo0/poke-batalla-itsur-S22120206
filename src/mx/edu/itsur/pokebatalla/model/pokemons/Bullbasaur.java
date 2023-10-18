@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 
 /**
  *
@@ -13,30 +13,22 @@ import java.util.ArrayList;
 public class Bullbasaur extends Pokemon {
 
     public Bullbasaur() {
-        this.tipo = "PLANTA/VENENO";
-        this.hp = 45;
-        this.ataque = 49;
-        this.defensa = 49;
-        this.nivel = 1;
-        this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("LÁTIGO CEPA");
-        this.habilidades.add("HOJA AFILADA");
+        tipo = "PLANTA/VENENO";
+        hp = 45;
+        ataque = 49;
+        defensa = 49;
+        nivel = 1;
+        precision = 4;
+        this.movimientos.add(new Latigo());
     }
 
     //Constructor alterno 1
-    public Bullbasaur(String nombre) {
+    public Bullbasaur(String nombre){
         this(); //invocando al constructor default
         this.nombre = nombre;
+        
     }
-
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("LÁTIGO CEPA")) {
-            System.out.println("Realizando LÁTIGO CEPA");
-        } else if (habilidad.equals("HOJA AFILADA")) {
-            System.out.println("Realizando HOJA AFILADA");
-        }
-        //TODO: otras habilidades...
-    }
-
+    
+    
+    
 }

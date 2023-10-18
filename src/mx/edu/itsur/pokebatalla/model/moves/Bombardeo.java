@@ -8,14 +8,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author LMC Alumno
  */
-public class AtaqueRapido extends MovimientoFisico {
+public class Bombardeo extends MovimientoFisico {
 
-    public AtaqueRapido() {
-        this.tipo = TiposDeMovimiento.NORMAL;
-        this.potencia = 40;
-        this.precision = 100;
-        this.puntosPoder = 30;
-
+    public Bombardeo() {
+        this.tipo = TiposDeMovimiento.ELECTRICO;
+        this.potencia = 15;
+        this.precision = 85;
+        this.puntosPoder = 20;
     }
-
+    
 }

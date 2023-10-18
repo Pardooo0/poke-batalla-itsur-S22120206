@@ -5,12 +5,15 @@
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
+import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 
 /**
  *
  * @author FJML1983
  */
-public class Pikachu extends Pokemon {
+public class Pikachu  extends Pokemon{
 
     //Constructor default
     public Pikachu() {
@@ -20,27 +23,30 @@ public class Pikachu extends Pokemon {
         this.defensa = 30;
         this.nivel = 1;
         this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("ATACKTRUENO");
-        this.habilidades.add("BOLAVOLTIO");
+        this.movimientos = new ArrayList<>();
+        this.movimientos.add(new Impactrueno());
+        this.movimientos.add(new AtaqueRapido());
+        this.movimientos.add(new Latigo());
+//this.habilidades.add("BOLAVOLTIO");
         //....
-    }
-
+    }    
+    
     //Constructor alterno 1
-    public Pikachu(String nombre) {
+    public Pikachu(String nombre){
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
-
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("ATACKTRUENO")) {
+    
+    public void atacar(Pokemon oponente, String movimiento){
+        if(movimiento.equals("IMPACTRUENO")){
             //Logica del daño por atacktrueno
-            System.out.println("Realizando ATACKTRUENO");
-        } else if (habilidad.equals("BOLAVOLTIO")) {
-            //Logica del daño por BOLAVOLTIO
-            System.out.println("Realizando BOLAVOLTIO");
+            
+            //System.out.println("Realizando ATACKTRUENO");
+        }else if(movimiento.equals("ATAQUE_RAPIDO")){
+            //Logica del daño por ATAQUE_RAPIDO
+            System.out.println("Realizando BOLAVOLTIO");            
         }
         //TODO: otras habilidades...
     }
-
+   
 }

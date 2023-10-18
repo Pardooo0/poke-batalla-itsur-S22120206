@@ -5,7 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -20,9 +20,7 @@ public class Ivysaur extends Pokemon {
         this.defensa = 63;
         this.nivel = 16;
         this.precision = 5;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("LÁTIGO CEPA");
-        this.habilidades.add("POLVO VENENO");
+       
     }
 
     //Constructor alterno 1

@@ -8,14 +8,12 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author LMC Alumno
  */
-public class AtaqueRapido extends MovimientoFisico {
+public class BolaSombra extends MovimientoEspecial {
 
-    public AtaqueRapido() {
-        this.tipo = TiposDeMovimiento.NORMAL;
-        this.potencia = 40;
+    public BolaSombra() {
+        this.tipo = Movimiento.TiposDeMovimiento.FANTASMA;
+        this.potencia = 80;
         this.precision = 100;
-        this.puntosPoder = 30;
-
+        this.puntosPoder = 15;
     }
-
 }

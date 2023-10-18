@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.Teletransporte;
 
 /**
  *
@@ -19,9 +19,7 @@ public class Abra extends Pokemon {
         this.defensa = 15;
         this.nivel = 1;
         this.precision = 5;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("TELETRANSPORTE");
-        this.habilidades.add("PLACAJE");
+        this.movimientos.add(new Teletransporte());
     }
 
     //Constructor alterno 1

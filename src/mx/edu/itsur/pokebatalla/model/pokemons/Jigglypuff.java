@@ -4,7 +4,6 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -19,9 +18,7 @@ public class Jigglypuff extends Pokemon {
         this.defensa = 20;
         this.nivel = 1;
         this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("DESTRUCTOR");
-        this.habilidades.add("BRILLO MÁGICO");
+
         //....
     }
 

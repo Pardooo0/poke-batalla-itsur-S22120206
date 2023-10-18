@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.Confusion;
 
 /**
  *
@@ -19,9 +19,7 @@ public class Butterfree extends Pokemon {
         this.defensa = 50;
         this.nivel = 10;
         this.precision = 3;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("CONFUSIÓN");
-        this.habilidades.add("PSIQUICO");
+        this.movimientos.add(new Confusion());
         //....
     }
 
