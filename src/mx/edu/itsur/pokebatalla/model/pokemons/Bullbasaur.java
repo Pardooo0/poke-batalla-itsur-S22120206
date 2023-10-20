@@ -12,6 +12,14 @@ import mx.edu.itsur.pokebatalla.model.moves.Latigo;
  */
 public class Bullbasaur extends Pokemon {
 
+    public enum Movimientos {
+        BOMBARDEO,
+        ATAQUE_RAPIDO,
+        LATIGO
+
+        //Otros movimientos...
+    }
+
     public Bullbasaur() {
         tipo = "PLANTA/VENENO";
         hp = 45;
@@ -23,12 +31,10 @@ public class Bullbasaur extends Pokemon {
     }
 
     //Constructor alterno 1
-    public Bullbasaur(String nombre){
+    public Bullbasaur(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
-        
+
     }
-    
-    
-    
+
 }

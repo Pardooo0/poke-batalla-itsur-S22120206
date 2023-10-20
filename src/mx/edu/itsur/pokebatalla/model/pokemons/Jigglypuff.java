@@ -10,6 +10,12 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Jigglypuff extends Pokemon {
+    public enum Movimientos {
+        CONFUSION,
+        PLACAJE
+
+        //Otros movimientos...
+    }
 
     public Jigglypuff() {
         this.tipo = "NORMAL/HADA";

@@ -9,6 +9,13 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
  * @author FJML1983
  */
 public class Charmander extends Pokemon {
+    public enum Movimientos {
+       
+        ATAQUE_RAPIDO,
+        ASCUAS
+
+        //Otros movimientos...
+    }
     public Charmander(){
         tipo = "FUEGO";
         hp = 39;

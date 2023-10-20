@@ -14,6 +14,14 @@ import mx.edu.itsur.pokebatalla.model.moves.Ascuas;
  */
 public class Charmeleon extends Pokemon {
 
+    public enum Movimientos {
+        ASCUAS,
+        ATAQUE_RAPIDO,
+        
+
+        //Otros movimientos...
+    }
+
     public Charmeleon() {
         this.tipo = "FUEGO";
         this.hp = 68;

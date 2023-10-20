@@ -11,6 +11,13 @@ import mx.edu.itsur.pokebatalla.model.moves.Bombardeo;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Exeggcute extends Pokemon {
+    public enum Movimientos {
+        CONFUSION,
+        ATAQUE_RAPIDO,
+        PLACAJE
+
+        //Otros movimientos...
+    }
     public Exeggcute() {
         this.tipo = "PLANTA/PSIQUICO";
         this.hp = 60;

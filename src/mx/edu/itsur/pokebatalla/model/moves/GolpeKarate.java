@@ -8,12 +8,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author LMC Alumno
  */
-public class Teletransporte extends MovimientoEstado {
+public class GolpeKarate extends MovimientoFisico {
 
-    public Teletransporte() {
-        this.tipo = TiposDeMovimiento.PSIQUICO;
-        this.potencia = 0;
-        this.precision = 0;
-        this.puntosPoder = 20;
+    public GolpeKarate() {
+        this.tipo = TiposDeMovimiento.NORMAL;
+        this.potencia = 50;
+        this.precision = 100;
+        this.puntosPoder = 25;
+
     }
 }

@@ -12,6 +12,13 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Ivysaur extends Pokemon {
+    public enum Movimientos {
+        PLACAJE,
+        ATAQUE_RAPIDO,
+        LATIGO
+
+        //Otros movimientos...
+    }
 
     public Ivysaur() {
         this.tipo = "PLANTA/VENENO";

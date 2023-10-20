@@ -11,6 +11,13 @@ import mx.edu.itsur.pokebatalla.model.moves.Confusion;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Butterfree extends Pokemon {
+    public enum Movimientos {
+        CONFUSION,
+        PLACAJE,
+        
+
+        //Otros movimientos...
+    }
 
     public Butterfree() {
         this.tipo = "BICHO/VOLADOR";

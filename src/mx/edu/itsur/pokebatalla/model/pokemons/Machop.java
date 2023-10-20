@@ -11,6 +11,13 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Machop extends Pokemon {
+    public enum Movimientos {
+        PLACAJE,
+        GOLPE_KARATE,
+        ATAQUE_RAPIDO
+
+        //Otros movimientos...
+    }
 
     public Machop() {
         this.tipo = "LUCHA";

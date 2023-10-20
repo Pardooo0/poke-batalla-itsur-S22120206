@@ -5,13 +5,18 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-
-
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
 public class Wartortle extends Pokemon {
+
+    public enum Movimientos {
+        PLACAJE,
+       
+
+        //Otros movimientos...
+    }
 
     public Wartortle() {
         this.tipo = "AGUA";
@@ -20,7 +25,7 @@ public class Wartortle extends Pokemon {
         this.defensa = 80;
         this.nivel = 16;
         this.precision = 5;
-       
+
     }
 
     //Constructor alterno 1

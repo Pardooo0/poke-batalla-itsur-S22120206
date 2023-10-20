@@ -13,6 +13,14 @@ import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
  */
 public class Gengar extends Pokemon {
 
+    public enum Movimientos {
+        BOLA_SOMBRA,
+        ATAQUE_RAPIDO,
+        CONFUSION
+
+        //Otros movimientos...
+    }
+
     public Gengar() {
         this.tipo = "FANTASMA/VENENO";
         this.hp = 60;

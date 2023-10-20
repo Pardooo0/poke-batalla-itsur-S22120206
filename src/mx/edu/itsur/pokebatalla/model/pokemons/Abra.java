@@ -11,7 +11,12 @@ import mx.edu.itsur.pokebatalla.model.moves.Teletransporte;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Abra extends Pokemon {
+    public enum Movimientos {
+        TELETRANSPORTE,
+        
 
+        //Otros movimientos...
+    }
     public Abra() {
         this.tipo = "PSIQUICO";
         this.hp = 25;
