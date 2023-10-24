@@ -5,13 +5,9 @@
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
-import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.GolpeKarate;
-import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
-import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
-
 
 /**
  *
@@ -38,10 +34,10 @@ public class Gengar extends Pokemon {
 
     }
 
-     public void atacar(Pokemon oponente, Gengar.Movimientos movimientoAUtilizar) {
+    public void atacar(Pokemon oponente, Gengar.Movimientos movimientoAUtilizar) {
 
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
             case RAYO_CONFUSO:
                 instanciaMovimiento = new RayoConfuso();

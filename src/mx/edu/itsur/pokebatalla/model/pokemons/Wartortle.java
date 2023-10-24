@@ -5,12 +5,10 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
 import mx.edu.itsur.pokebatalla.model.moves.Placaje;
 import mx.edu.itsur.pokebatalla.model.moves.Proteccion;
-
 
 /**
  *
@@ -22,7 +20,6 @@ public class Wartortle extends Pokemon {
         PLACAJE,
         PISTOLA_AGUA,
         PROTECCION
-       
 
         //Otros movimientos...
     }
@@ -46,7 +43,7 @@ public class Wartortle extends Pokemon {
     public void atacar(Pokemon oponente, Wartortle.Movimientos movimientoAUtilizar) {
 
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
             case PLACAJE:
                 instanciaMovimiento = new Placaje();

@@ -20,7 +20,6 @@ public class Charmeleon extends Pokemon {
         ASCUAS,
         ATAQUE_RAPIDO,
         MALICIOSO
-        
 
         //Otros movimientos...
     }
@@ -41,10 +40,10 @@ public class Charmeleon extends Pokemon {
         this.nombre = nombre;
     }
 
-     public void atacar(Pokemon oponente, Charmeleon.Movimientos movimientoAUtilizar) {
+    public void atacar(Pokemon oponente, Charmeleon.Movimientos movimientoAUtilizar) {
 
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
             case MALICIOSO:
                 instanciaMovimiento = new Malicioso();
