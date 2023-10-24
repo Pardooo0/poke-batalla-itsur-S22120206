@@ -5,6 +5,13 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+import mx.edu.itsur.pokebatalla.model.moves.Proteccion;
+
+
 /**
  *
  * @author RAFAEL CASTRO TINOCO
@@ -13,6 +20,8 @@ public class Wartortle extends Pokemon {
 
     public enum Movimientos {
         PLACAJE,
+        PISTOLA_AGUA,
+        PROTECCION
        
 
         //Otros movimientos...
@@ -34,12 +43,27 @@ public class Wartortle extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("PISTOLA AGUA")) {
-            System.out.println("Realizando PISTOLA AGUA");
-        } else if (habilidad.equals("HIDROBOMBA")) {
-            System.out.println("Realizando HIDROBOMBA");
+    public void atacar(Pokemon oponente, Wartortle.Movimientos movimientoAUtilizar) {
+
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+            case PROTECCION:
+                instanciaMovimiento = new Proteccion();
+                break;
+            case PISTOLA_AGUA:
+                instanciaMovimiento = new PistolaAgua();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
 }

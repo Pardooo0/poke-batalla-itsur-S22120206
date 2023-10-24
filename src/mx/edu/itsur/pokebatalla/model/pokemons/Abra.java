@@ -24,7 +24,6 @@ public class Abra extends Pokemon {
         this.defensa = 15;
         this.nivel = 1;
         this.precision = 5;
-        this.movimientos.add(new Teletransporte());
     }
 
     //Constructor alterno 1
@@ -33,12 +32,5 @@ public class Abra extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("TELETRANSPORTE")) {
-            System.out.println("Realizando TELETRANSPORTE");
-        } else if (habilidad.equals("PLACAJE")) {
-            System.out.println("Realizando PLACAJE");
-        }
-        //TODO: otras habilidades...
-    }
+ 
 }

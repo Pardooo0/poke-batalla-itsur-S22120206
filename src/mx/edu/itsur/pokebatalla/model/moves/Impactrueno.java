@@ -6,7 +6,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
 
 /**
  *
- * @author LMC Alumno
+ * @author RAFAEL CASTRO TINOCO
  */
 public class Impactrueno extends MovimientoEspecial {
 
@@ -14,9 +14,8 @@ public class Impactrueno extends MovimientoEspecial {
         this.tipo = TiposDeMovimiento.ELECTRICO;
         this.potencia = 40;
         this.precision = 100;
-        this.puntosPoder = 1;
-        
-    }
-        
+        this.puntosPoder = 30;
+
+    }    
     
 }

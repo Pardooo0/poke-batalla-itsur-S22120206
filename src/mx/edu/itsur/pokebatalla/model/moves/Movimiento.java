@@ -7,18 +7,18 @@ package mx.edu.itsur.pokebatalla.model.moves;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
- * Un movimiento o ataque (Move en inglés; わざ Movimiento en japonés) es una
- * técnica que los Pokémon son capaces de aprender y que usan en los combates
- * con el fin de debilitar a sus oponentes. Este contenido proviene de
- * wikidex.net, y debe darse atribución a sus autores, tal como especifica la
- * licencia. Se prohíbe su uso a PlagioDex (el wiki de FANDOOM), por copiar
- * reiteradamente sin dar atribución https://www.wikidex.net/wiki/Movimiento
- *
+ * Esta clase representa nn movimiento o ataque 
+ * (Move en inglés; わざ Movimiento en japonés) 
+ * es una técnica que los Pokémon son capaces de aprender 
+ * y que usan en los combates con el fin de debilitar a sus oponentes.
+ * https://www.wikidex.net/wiki/Movimiento
+ * 
  * @author RAFAEL CASTRO TINOCO
  */
 public class Movimiento {
 
     enum TiposDeMovimiento {
+        //Primera Generación
         AGUA,
         BICHO,
         DRAGON,
@@ -35,8 +35,11 @@ public class Movimiento {
         TIERRA,
         VENENO,
         VOLADOR
+        //Segunda Generación
+        //...        
     }
-//Atributos
+
+    //Atributos
     protected TiposDeMovimiento tipo;
     protected int potencia;
     protected int precision;
@@ -49,17 +52,26 @@ public class Movimiento {
         int ataqueAtacante = usuario.getAtaque();
         int poderMovimiento = this.puntosPoder; //this.getPoder();
         int defensaObjetivo = objetivo.getDefensa();
-
+        
         //Calcular el modificador, considerando tipos.
         double modificador = 1.0; // Modificador base (sin modificaciones)       
         //if ()... POR HACER        
-
-        int danio = (int) (((((2 * nivelAtacante / 5 + 2)
-                * ataqueAtacante
-                * poderMovimiento / defensaObjetivo)
-                / 50) + 2) * modificador);
-
-        objetivo.recibirDanio(danio);
         
-    }
+        int danio = (int) (((
+                ((2 * nivelAtacante / 5 + 2) 
+                        * ataqueAtacante 
+                        * poderMovimiento / defensaObjetivo) 
+                  / 50) + 2) * modificador);
+        
+        objetivo.recibirDanio(danio); 
+
+        //Imprimir efecto del movimiento en consola
+        System.out.println(
+                         usuario.getClass().getSimpleName() + " aplica " + 
+                         this.getClass().getSimpleName() + " a " +  
+                         objetivo.getClass().getSimpleName() + " y causa danio de " +
+                         danio);
+        System.out.println("El objetivo quedo asi: " + objetivo);
+        
+    }    
 }

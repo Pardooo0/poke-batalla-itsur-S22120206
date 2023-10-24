@@ -12,7 +12,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
- * @author FJML1983
+ * @author RAFAEL CASTRO TINOCO
  */
 public class Pikachu extends Pokemon {
 
@@ -45,8 +45,8 @@ public class Pikachu extends Pokemon {
 
     public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
 
-        Movimiento instanciaMovimiento;
-        
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
         switch (movimientoAUtilizar) {
             case IMPACTRUENO:
                 instanciaMovimiento = new Impactrueno();
@@ -63,6 +63,7 @@ public class Pikachu extends Pokemon {
                 throw new AssertionError();
         }
 
+        //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
     }
 

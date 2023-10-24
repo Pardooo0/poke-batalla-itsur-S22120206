@@ -25,7 +25,7 @@ public class Exeggcute extends Pokemon {
         this.defensa = 80;
         this.nivel = 1;
         this.precision = 3;
-        this.movimientos.add(new Bombardeo());
+
     }
 
     //Constructor alterno 1
@@ -34,13 +34,4 @@ public class Exeggcute extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("BOMBA GERMEN")) {
-            System.out.println("Realizando BOMBA GERMEN");
-            
-        } else if (habilidad.equals("CONFUSIÓN")) { 
-            System.out.println("Realizando CONFUSIÓN");
-        }
-        //TODO: otras habilidades...
-    }
 }

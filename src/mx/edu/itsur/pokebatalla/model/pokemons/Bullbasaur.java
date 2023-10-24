@@ -4,7 +4,9 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
@@ -13,11 +15,8 @@ import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 public class Bullbasaur extends Pokemon {
 
     public enum Movimientos {
-        BOMBARDEO,
         ATAQUE_RAPIDO,
         LATIGO
-
-        //Otros movimientos...
     }
 
     public Bullbasaur() {
@@ -27,13 +26,33 @@ public class Bullbasaur extends Pokemon {
         defensa = 49;
         nivel = 1;
         precision = 4;
-        this.movimientos.add(new Latigo());
     }
 
     //Constructor alterno 1
     public Bullbasaur(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
+
+    }
+     public void atacar(Pokemon oponente, Bullbasaur.Movimientos movimientoAUtilizar) {
+
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            case LATIGO:
+                instanciaMovimiento = new Latigo();
+                break;
+
+            //Otros movimientos aquí...
+            default:
+                throw new AssertionError();
+        }
+
+        //Aplicar el movimiento
+        instanciaMovimiento.utilizar(this, oponente);
 
     }
 

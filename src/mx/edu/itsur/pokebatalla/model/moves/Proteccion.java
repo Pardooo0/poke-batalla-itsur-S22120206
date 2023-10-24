@@ -8,13 +8,12 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Latigo extends MovimientoEstado{
-
-    public Latigo() {
+public class Proteccion extends MovimientoEstado{
+     public Proteccion() {
         this.tipo = TiposDeMovimiento.NORMAL;
         this.potencia = 0;
-        this.precision = 100;
-        this.puntosPoder = 30;        
-    } 
-    
+        this.precision = 0;
+        this.puntosPoder = 10;
+
+    }
 }

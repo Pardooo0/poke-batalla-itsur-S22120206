@@ -26,7 +26,6 @@ public class Butterfree extends Pokemon {
         this.defensa = 50;
         this.nivel = 10;
         this.precision = 3;
-        this.movimientos.add(new Confusion());
         //....
     }
 
@@ -36,13 +35,6 @@ public class Butterfree extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("CONFUSIÓN")) {
-            System.out.println("Realizando CONFUSIÓN");
-        } else if (habilidad.equals("PSIQUICO")) {
-            System.out.println("Realizando PSIQUICO");
-        }
-        //TODO: otras habilidades...
-    }
+
 
 }

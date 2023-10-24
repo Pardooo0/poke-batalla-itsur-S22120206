@@ -7,6 +7,8 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Ascuas;
+import mx.edu.itsur.pokebatalla.model.moves.Malicioso;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
@@ -17,6 +19,7 @@ public class Charmeleon extends Pokemon {
     public enum Movimientos {
         ASCUAS,
         ATAQUE_RAPIDO,
+        MALICIOSO
         
 
         //Otros movimientos...
@@ -29,8 +32,7 @@ public class Charmeleon extends Pokemon {
         this.defensa = 58;
         this.nivel = 16;
         this.precision = 4;
-        this.movimientos.add(new AtaqueRapido());
-        this.movimientos.add(new Ascuas());
+
     }
 
     //Constructor alterno 1
@@ -39,12 +41,27 @@ public class Charmeleon extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("LANZA LLAMAS")) {
-            System.out.println("Realizando LANZA LLAMAS");
-        } else if (habilidad.equals("COLMILLO ÍGNEO")) {
-            System.out.println("Realizando COLMILLO ÍGNEO");
+     public void atacar(Pokemon oponente, Charmeleon.Movimientos movimientoAUtilizar) {
+
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case MALICIOSO:
+                instanciaMovimiento = new Malicioso();
+                break;
+            case ASCUAS:
+                instanciaMovimiento = new Ascuas();
+                break;
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
 }

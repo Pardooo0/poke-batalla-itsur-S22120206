@@ -6,17 +6,24 @@ package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.GolpeKarate;
+import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
+import mx.edu.itsur.pokebatalla.model.moves.Latigo;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
+
 
 /**
  *
- * @author DIEGO JAVIER OROZCO AGUIRRE
+ * @author RAFAEL CASTRO TINOCO
  */
 public class Gengar extends Pokemon {
 
     public enum Movimientos {
         BOLA_SOMBRA,
         ATAQUE_RAPIDO,
-        CONFUSION
+        RAYO_CONFUSO,
+        GOLPE_KARATE
 
         //Otros movimientos...
     }
@@ -28,22 +35,31 @@ public class Gengar extends Pokemon {
         this.defensa = 60;
         this.nivel = 1;
         this.precision = 5;
-        this.movimientos.add(new BolaSombra());
-        this.movimientos.add(new AtaqueRapido());
+
     }
 
-    //Constructor alterno 1
-    public Gengar(String nombre) {
-        this(); //invocando al constructor default
-        this.nombre = nombre;
-    }
+     public void atacar(Pokemon oponente, Gengar.Movimientos movimientoAUtilizar) {
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("PUÑO SOMBRA")) {
-            System.out.println("Realizando PUÑO SOMBRA");
-        } else if (habilidad.equals("BOMBA ACIDA")) {
-            System.out.println("Realizando BOMBA ACIDA");
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case RAYO_CONFUSO:
+                instanciaMovimiento = new RayoConfuso();
+                break;
+            case GOLPE_KARATE:
+                instanciaMovimiento = new GolpeKarate();
+                break;
+            case BOLA_SOMBRA:
+                instanciaMovimiento = new BolaSombra();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
+
 }

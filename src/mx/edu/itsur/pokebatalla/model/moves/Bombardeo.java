@@ -6,7 +6,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
 
 /**
  *
- * @author LMC Alumno
+ * @author RAFAEL CASTRO TINOCO
  */
 public class Bombardeo extends MovimientoFisico {
 
