@@ -32,13 +32,21 @@ public class Main {
         System.out.println("->Pikachu se encuentra con un Charmander y ataca");
         pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO);
 
+        System.out.println("------------------------------------------------------");
+
         System.out.println("->Charmander se molesta y responde ");
         charm.atacar(pika, Charmander.Movimientos.ATAQUE_RAPIDO);
+
+        System.out.println("------------------------------------------------------");
 
         System.out.println("->Bullbasaur se enoja porque atacaron a su amigo Pikachu y...");
         bullb.atacar(charm, Bullbasaur.Movimientos.LATIGO);
 
         /////////////////////////////////////////////////////////////////////////////////////
+        System.out.println("------------------------------------------------------");
+        System.out.println("------------------------------------------------------");
+        System.out.println("------------------------------------------------------");
+        System.out.println("------------------------------------------------------");
         Wartortle wart = new Wartortle();
         Charmeleon charmi = new Charmeleon();
         Gengar Geng = new Gengar();
@@ -47,8 +55,12 @@ public class Main {
                 + " charmeleon lo ataca");
         charmi.atacar(wart, Charmeleon.Movimientos.ASCUAS);
 
+        System.out.println("------------------------------------------------------");
+
         System.out.println("->Wartortle se molesta y tambien ataca ");
         wart.atacar(charmi, Wartortle.Movimientos.PISTOLA_AGUA);
+
+        System.out.println("------------------------------------------------------");
 
         System.out.println("->Gengar se mete a la pelea porque estan "
                 + "dandole una golpisa a Charmeleon y ataca...");

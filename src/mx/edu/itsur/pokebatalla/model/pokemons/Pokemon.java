@@ -20,6 +20,7 @@ public class Pokemon {
     protected int hp;
     protected int ataque;
     protected int defensa;
+    protected int xp;
     protected double precision;
 
     Pokemon() {
