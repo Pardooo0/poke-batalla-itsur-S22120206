@@ -4,12 +4,18 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.Confusion;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+
 
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
 public class Jigglypuff extends Pokemon {
+
     public enum Movimientos {
         CONFUSION,
         PLACAJE
@@ -34,13 +40,25 @@ public class Jigglypuff extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("DESTRUCTOR")) {
-            System.out.println("Realizando DESTRUCTOR");
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
-        } else if (habilidad.equals("BRILLO MÁGICO")) {
-            System.out.println("Realizando BRILLO MÁGICO");
+        Jigglypuff.Movimientos movimientoAUtilizar = Jigglypuff.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case CONFUSION:
+                instanciaMovimiento = new Confusion();
+                break;
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
 }

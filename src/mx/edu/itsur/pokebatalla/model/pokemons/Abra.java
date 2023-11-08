@@ -4,6 +4,10 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
 import mx.edu.itsur.pokebatalla.model.moves.Teletransporte;
 
 /**
@@ -26,11 +30,22 @@ public class Abra extends Pokemon {
         this.precision = 5;
     }
 
-    //Constructor alterno 1
-    public Abra(String nombre) {
-        this(); //invocando al constructor default
-        this.nombre = nombre;
-    }
+  public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
- 
+        Abra.Movimientos movimientoAUtilizar = Abra.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case TELETRANSPORTE:
+                instanciaMovimiento = new Teletransporte();
+                break;
+            
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
+        }
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
+    }
 }

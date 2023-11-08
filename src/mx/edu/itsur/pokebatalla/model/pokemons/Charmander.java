@@ -5,9 +5,11 @@
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
 
 /**
  *
@@ -39,22 +41,22 @@ public class Charmander extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Charmander.Movimientos movimientoAUtilizar) {
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        Charmander.Movimientos movimientoAUtilizar = Charmander.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
+
             case ATAQUE_RAPIDO:
                 instanciaMovimiento = new AtaqueRapido();
                 break;
 
-            //Otros movimientos aquí...
+            //Otros movimientos aquí...                
             default:
                 throw new AssertionError();
         }
-
-        //Aplicar el movimiento
+        //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
-
     }
 }

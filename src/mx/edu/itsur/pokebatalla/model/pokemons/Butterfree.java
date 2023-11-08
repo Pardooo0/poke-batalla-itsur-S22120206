@@ -4,17 +4,22 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Confusion;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
 
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
 public class Butterfree extends Pokemon {
+
     public enum Movimientos {
         CONFUSION,
         PLACAJE,
-        
 
         //Otros movimientos...
     }
@@ -29,12 +34,24 @@ public class Butterfree extends Pokemon {
         //....
     }
 
-    //Constructor alterno 1
-    public Butterfree(String nombre) {
-        this(); //invocando al constructor default
-        this.nombre = nombre;
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        Butterfree.Movimientos movimientoAUtilizar = Butterfree.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case CONFUSION:
+                instanciaMovimiento = new Confusion();
+                break;
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
+        }
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
-
-
-
 }

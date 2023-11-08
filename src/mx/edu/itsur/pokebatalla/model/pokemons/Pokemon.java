@@ -11,7 +11,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Pokemon {
+public abstract class Pokemon {
 
     //Atributos
     protected String tipo;
@@ -20,9 +20,8 @@ public class Pokemon {
     protected int hp;
     protected int ataque;
     protected int defensa;
-    protected int xp;
     protected double precision;
-
+    
     Pokemon() {
     }
 
@@ -47,6 +46,7 @@ public class Pokemon {
         this.hp = this.hp - danio;
     }        
     
+    protected abstract void atacar(Pokemon oponente, int ordinalMovimiento);
 
     @Override
     public String toString() {
@@ -54,5 +54,7 @@ public class Pokemon {
         return this.getClass().getSimpleName() + 
                 "{tipo:" + tipo + " hp:" + hp + "}";
     }
-
+       
+    public abstract Enum[] getMovimientos();
+            
 }

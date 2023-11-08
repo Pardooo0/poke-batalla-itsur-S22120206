@@ -4,7 +4,13 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Bombardeo;
+import mx.edu.itsur.pokebatalla.model.moves.Confusion;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
 
 /**
  *
@@ -27,11 +33,27 @@ public class Exeggcute extends Pokemon {
         this.precision = 3;
 
     }
+public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
-    //Constructor alterno 1
-    public Exeggcute(String nombre) {
-        this(); //invocando al constructor default
-        this.nombre = nombre;
+        Exeggcute.Movimientos movimientoAUtilizar = Exeggcute.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case CONFUSION:
+                instanciaMovimiento = new Confusion();
+                break;
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
+        }
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
-
 }

@@ -16,6 +16,8 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  */
 public class Pikachu extends Pokemon {
 
+   
+
     /**
      * Movimientos que puede realizar el Pokémon
      */
@@ -43,8 +45,10 @@ public class Pikachu extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
+ 
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        Pikachu.Movimientos movimientoAUtilizar = Pikachu.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;        
         switch (movimientoAUtilizar) {
@@ -65,6 +69,15 @@ public class Pikachu extends Pokemon {
 
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+    
+    
+    ////////////////////////////
+    /// IMPLEMENTAR A TODOS ///
+    ///////////////////////////
+    @Override
+    public Enum[] getMovimientos() {
+        return Pikachu.Movimientos.values();
     }
 
 }

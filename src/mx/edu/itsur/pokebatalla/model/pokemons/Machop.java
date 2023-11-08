@@ -4,6 +4,11 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.GolpeKarate;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+
 
 
 /**
@@ -35,12 +40,28 @@ public class Machop extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("GOLPE ROCA")) {
-            System.out.println("Realizando GOLPE ROCA");
-        } else if (habilidad.equals("ULTRAPUÑO")) {
-            System.out.println("Realizando ULTRAPUÑO");
+   public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        Machop.Movimientos movimientoAUtilizar = Machop.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            case GOLPE_KARATE:
+                instanciaMovimiento = new GolpeKarate();
+                break;
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
 }

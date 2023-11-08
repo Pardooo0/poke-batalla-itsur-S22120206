@@ -5,8 +5,10 @@
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
 
 /**
  *
@@ -26,7 +28,6 @@ public class Bullbasaur extends Pokemon {
         defensa = 49;
         nivel = 1;
         precision = 4;
-        xp = 64;
     }
 
     //Constructor alterno 1
@@ -35,8 +36,9 @@ public class Bullbasaur extends Pokemon {
         this.nombre = nombre;
 
     }
-     public void atacar(Pokemon oponente, Bullbasaur.Movimientos movimientoAUtilizar) {
+     public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        Bullbasaur.Movimientos movimientoAUtilizar = Bullbasaur.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
@@ -46,15 +48,12 @@ public class Bullbasaur extends Pokemon {
             case LATIGO:
                 instanciaMovimiento = new Latigo();
                 break;
-
-            //Otros movimientos aquí...
+            
+            //Otros movimientos aquí...                
             default:
                 throw new AssertionError();
         }
-
-        //Aplicar el movimiento
+        //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
-
     }
-
 }

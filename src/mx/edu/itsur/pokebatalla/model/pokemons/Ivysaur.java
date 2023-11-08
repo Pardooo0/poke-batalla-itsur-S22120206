@@ -5,6 +5,12 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
+import mx.edu.itsur.pokebatalla.model.moves.Latigo;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
+import mx.edu.itsur.pokebatalla.model.moves.Placaje;
+
 
 
 /**
@@ -36,14 +42,28 @@ public class Ivysaur extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, String habilidad) {
-        if (habilidad.equals("LÁTIGO CEPA")) {
+        public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
-            System.out.println("Realizando LÁTIGO CEPA");
-        } else if (habilidad.equals("POLVO VENENO")) {
+        Ivysaur.Movimientos movimientoAUtilizar = Ivysaur.Movimientos.values()[ordinalMovimiento];
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case LATIGO:
+                instanciaMovimiento = new Latigo();
+                break;
+            case PLACAJE:
+                instanciaMovimiento = new Placaje();
+                break;
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
 
-            System.out.println("Realizando POLVO VENENO");
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
 }
