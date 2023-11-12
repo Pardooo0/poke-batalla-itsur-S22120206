@@ -33,7 +33,7 @@ public class Wartortle extends Pokemon {
         this.defensa = 80;
         this.nivel = 16;
         this.precision = 5;
-
+        this.xp = 143;
     }
 
     //Constructor alterno 1
@@ -44,9 +44,14 @@ public class Wartortle extends Pokemon {
 
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
         Wartortle.Movimientos movimientoAUtilizar = Wartortle.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case PISTOLA_AGUA:
                 instanciaMovimiento = new PistolaAgua();
@@ -65,5 +70,10 @@ public class Wartortle extends Pokemon {
 
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Wartortle.Movimientos.values();
     }
 }

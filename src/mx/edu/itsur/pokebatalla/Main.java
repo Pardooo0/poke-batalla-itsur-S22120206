@@ -30,17 +30,17 @@ public class Main {
         Bullbasaur bullb = new Bullbasaur();
 
         System.out.println("->Pikachu se encuentra con un Charmander y ataca");
-        pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO);
+        pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO.ordinal());
 
         System.out.println("------------------------------------------------------");
 
         System.out.println("->Charmander se molesta y responde ");
-        charm.atacar(pika, Charmander.Movimientos.ATAQUE_RAPIDO);
+        charm.atacar(pika, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
 
         System.out.println("------------------------------------------------------");
 
         System.out.println("->Bullbasaur se enoja porque atacaron a su amigo Pikachu y...");
-        bullb.atacar(charm, Bullbasaur.Movimientos.LATIGO);
+        bullb.atacar(charm, Bullbasaur.Movimientos.LATIGO.ordinal());
 
         /////////////////////////////////////////////////////////////////////////////////////
         System.out.println("------------------------------------------------------");
@@ -53,18 +53,18 @@ public class Main {
 
         System.out.println("->Charmeleon va caminando entre la hierva y  se encuentra con un Wartortle,"
                 + " charmeleon lo ataca");
-        charmi.atacar(wart, Charmeleon.Movimientos.ASCUAS);
+        charmi.atacar(wart, Charmeleon.Movimientos.ASCUAS.ordinal());
 
         System.out.println("------------------------------------------------------");
 
         System.out.println("->Wartortle se molesta y tambien ataca ");
-        wart.atacar(charmi, Wartortle.Movimientos.PISTOLA_AGUA);
+        wart.atacar(charmi, Wartortle.Movimientos.PISTOLA_AGUA.ordinal());
 
         System.out.println("------------------------------------------------------");
 
         System.out.println("->Gengar se mete a la pelea porque estan "
                 + "dandole una golpisa a Charmeleon y ataca...");
-        Geng.atacar(wart, Gengar.Movimientos.BOLA_SOMBRA);
+        Geng.atacar(wart, Gengar.Movimientos.BOLA_SOMBRA.ordinal());
 
     }
 

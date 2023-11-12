@@ -31,14 +31,21 @@ public class Butterfree extends Pokemon {
         this.defensa = 50;
         this.nivel = 10;
         this.precision = 3;
+        this.xp = 160;
         //....
     }
 
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
+
         Butterfree.Movimientos movimientoAUtilizar = Butterfree.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case CONFUSION:
                 instanciaMovimiento = new Confusion();
@@ -53,5 +60,10 @@ public class Butterfree extends Pokemon {
         }
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Butterfree.Movimientos.values();
     }
 }

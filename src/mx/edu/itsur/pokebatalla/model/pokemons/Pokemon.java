@@ -21,7 +21,8 @@ public abstract class Pokemon {
     protected int ataque;
     protected int defensa;
     protected double precision;
-    
+    protected int xp;
+
     Pokemon() {
     }
 
@@ -29,32 +30,40 @@ public abstract class Pokemon {
     public int getNivel() {
         return nivel;
     }
+
     public int getAtaque() {
         return ataque;
-    }    
-    public int getDefensa(){
+    }
+
+    public int getDefensa() {
         return defensa;
     }
     
+    public int getHP() {
+       return hp;
+    }
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    //Métodos 
-    public void recibirDanio(int danio){
-        this.hp = this.hp - danio;
-    }        
     
-    protected abstract void atacar(Pokemon oponente, int ordinalMovimiento);
+    //Métodos 
+    public void recibirDanio(int danio) {
+        this.hp = this.hp - danio;
+    }
+
+    public abstract void atacar(Pokemon oponente, int ordinalMovimiento);
+    //Devolver la lista de movimientos disponibles del pokemon.
+
+    public abstract Enum[] getMovimientos();
 
     @Override
     public String toString() {
 
-        return this.getClass().getSimpleName() + 
-                "{tipo:" + tipo + " hp:" + hp + "}";
+        return this.getClass().getSimpleName()
+                + "{tipo:" + tipo + " hp:" + hp + "}";
     }
-       
-    public abstract Enum[] getMovimientos();
-            
+
+    
+
 }

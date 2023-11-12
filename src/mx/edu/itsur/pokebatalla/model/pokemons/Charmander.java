@@ -33,6 +33,7 @@ public class Charmander extends Pokemon {
         defensa = 43;
         nivel = 1;
         precision = 4;
+        
     }
 
     //Constructor alterno 1
@@ -42,10 +43,16 @@ public class Charmander extends Pokemon {
     }
 
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
 
         Charmander.Movimientos movimientoAUtilizar = Charmander.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+        
         switch (movimientoAUtilizar) {
 
             case ATAQUE_RAPIDO:
@@ -58,5 +65,10 @@ public class Charmander extends Pokemon {
         }
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Charmander.Movimientos.values();
     }
 }

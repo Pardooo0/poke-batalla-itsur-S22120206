@@ -34,14 +34,21 @@ public class Gengar extends Pokemon {
         this.defensa = 60;
         this.nivel = 1;
         this.precision = 5;
+        this.xp = 190;
 
     }
 
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
 
         Gengar.Movimientos movimientoAUtilizar = Gengar.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+        
         switch (movimientoAUtilizar) {
             case RAYO_CONFUSO:
                 instanciaMovimiento = new RayoConfuso();
@@ -59,5 +66,10 @@ public class Gengar extends Pokemon {
         }
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Gengar.Movimientos.values();
     }
 }

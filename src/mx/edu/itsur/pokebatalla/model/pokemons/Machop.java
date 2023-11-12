@@ -9,13 +9,12 @@ import mx.edu.itsur.pokebatalla.model.moves.GolpeKarate;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.Placaje;
 
-
-
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
 public class Machop extends Pokemon {
+
     public enum Movimientos {
         PLACAJE,
         GOLPE_KARATE,
@@ -31,7 +30,8 @@ public class Machop extends Pokemon {
         this.defensa = 50;
         this.nivel = 1;
         this.precision = 3;
- 
+        this.xp =88;
+
     }
 
     //Constructor alterno 1
@@ -40,11 +40,16 @@ public class Machop extends Pokemon {
         this.nombre = nombre;
     }
 
-   public void atacar(Pokemon oponente, int ordinalMovimiento) {
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
         Machop.Movimientos movimientoAUtilizar = Machop.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case ATAQUE_RAPIDO:
                 instanciaMovimiento = new AtaqueRapido();
@@ -63,5 +68,10 @@ public class Machop extends Pokemon {
 
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Machop.Movimientos.values();
     }
 }

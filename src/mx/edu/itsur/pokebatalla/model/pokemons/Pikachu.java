@@ -16,8 +16,6 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  */
 public class Pikachu extends Pokemon {
 
-   
-
     /**
      * Movimientos que puede realizar el Pokémon
      */
@@ -45,12 +43,16 @@ public class Pikachu extends Pokemon {
         this.nombre = nombre;
     }
 
- 
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
         Pikachu.Movimientos movimientoAUtilizar = Pikachu.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+        Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case IMPACTRUENO:
                 instanciaMovimiento = new Impactrueno();
@@ -70,11 +72,7 @@ public class Pikachu extends Pokemon {
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
     }
-    
-    
-    ////////////////////////////
-    /// IMPLEMENTAR A TODOS ///
-    ///////////////////////////
+
     @Override
     public Enum[] getMovimientos() {
         return Pikachu.Movimientos.values();

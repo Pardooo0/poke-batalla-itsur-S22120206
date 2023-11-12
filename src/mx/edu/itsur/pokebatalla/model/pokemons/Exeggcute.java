@@ -17,6 +17,7 @@ import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
  * @author RAFAEL CASTRO TINOCO
  */
 public class Exeggcute extends Pokemon {
+
     public enum Movimientos {
         CONFUSION,
         ATAQUE_RAPIDO,
@@ -24,6 +25,7 @@ public class Exeggcute extends Pokemon {
 
         //Otros movimientos...
     }
+
     public Exeggcute() {
         this.tipo = "PLANTA/PSIQUICO";
         this.hp = 60;
@@ -31,13 +33,20 @@ public class Exeggcute extends Pokemon {
         this.defensa = 80;
         this.nivel = 1;
         this.precision = 3;
+        this.xp = 98;
 
     }
-public void atacar(Pokemon oponente, int ordinalMovimiento) {
 
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
         Exeggcute.Movimientos movimientoAUtilizar = Exeggcute.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case CONFUSION:
                 instanciaMovimiento = new Confusion();
@@ -55,5 +64,10 @@ public void atacar(Pokemon oponente, int ordinalMovimiento) {
         }
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Exeggcute.Movimientos.values();
     }
 }

@@ -11,13 +11,12 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
 import mx.edu.itsur.pokebatalla.model.moves.Placaje;
 
-
-
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
 public class Ivysaur extends Pokemon {
+
     public enum Movimientos {
         PLACAJE,
         ATAQUE_RAPIDO,
@@ -33,7 +32,8 @@ public class Ivysaur extends Pokemon {
         this.defensa = 63;
         this.nivel = 16;
         this.precision = 5;
-       
+        this.xp = 141;
+
     }
 
     //Constructor alterno 1
@@ -42,11 +42,17 @@ public class Ivysaur extends Pokemon {
         this.nombre = nombre;
     }
 
-        public void atacar(Pokemon oponente, int ordinalMovimiento) {
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
 
         Ivysaur.Movimientos movimientoAUtilizar = Ivysaur.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case LATIGO:
                 instanciaMovimiento = new Latigo();
@@ -65,5 +71,10 @@ public class Ivysaur extends Pokemon {
 
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Ivysaur.Movimientos.values();
     }
 }

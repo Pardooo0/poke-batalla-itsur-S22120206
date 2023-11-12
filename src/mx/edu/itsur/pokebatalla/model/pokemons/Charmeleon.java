@@ -33,6 +33,7 @@ public class Charmeleon extends Pokemon {
         this.defensa = 58;
         this.nivel = 16;
         this.precision = 4;
+        this.xp = 142;
 
     }
 
@@ -42,11 +43,17 @@ public class Charmeleon extends Pokemon {
         this.nombre = nombre;
     }
 
-public void atacar(Pokemon oponente, int ordinalMovimiento) {
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        if (this.hp <= 0) {
+            System.out.println("El Pokemon esta agotado y no puede realizar mas movimientos");
+            return;
+        }
 
         Charmeleon.Movimientos movimientoAUtilizar = Charmeleon.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
+
         switch (movimientoAUtilizar) {
             case ASCUAS:
                 instanciaMovimiento = new Ascuas();
@@ -64,5 +71,10 @@ public void atacar(Pokemon oponente, int ordinalMovimiento) {
         }
         //Aplicar el movimiento.
         instanciaMovimiento.utilizar(this, oponente);
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Charmeleon.Movimientos.values();
     }
 }
