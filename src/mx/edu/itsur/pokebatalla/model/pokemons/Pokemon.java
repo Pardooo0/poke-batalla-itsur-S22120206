@@ -4,9 +4,6 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
-import java.util.List;
-import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
-
 /**
  *
  * @author RAFAEL CASTRO TINOCO

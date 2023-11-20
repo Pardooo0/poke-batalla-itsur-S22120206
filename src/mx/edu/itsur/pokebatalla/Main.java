@@ -4,13 +4,15 @@
  */
 package mx.edu.itsur.pokebatalla;
 
+import mx.edu.itsur.pokebatalla.model.battles.Batalla;
+import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
 import mx.edu.itsur.pokebatalla.model.pokemons.Bullbasaur;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pikachu;
 import mx.edu.itsur.pokebatalla.model.pokemons.Charmander;
-///////////////////////////////////////////////////////////
 import mx.edu.itsur.pokebatalla.model.pokemons.Charmeleon;
+import mx.edu.itsur.pokebatalla.model.pokemons.Ivysaur;
 import mx.edu.itsur.pokebatalla.model.pokemons.Wartortle;
-import mx.edu.itsur.pokebatalla.model.pokemons.Gengar;
+
 
 /**
  *
@@ -22,50 +24,45 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hola PokeBatalla!");
-
+        System.out.println("Hello PokeBatalla!");
+        
+        //Instanciar pokemons
         Pikachu pika = new Pikachu();
         Charmander charm = new Charmander();
         Bullbasaur bullb = new Bullbasaur();
-
-        System.out.println("->Pikachu se encuentra con un Charmander y ataca");
-        pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO.ordinal());
-
-        System.out.println("------------------------------------------------------");
-
-        System.out.println("->Charmander se molesta y responde ");
-        charm.atacar(pika, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
-
-        System.out.println("------------------------------------------------------");
-
-        System.out.println("->Bullbasaur se enoja porque atacaron a su amigo Pikachu y...");
-        bullb.atacar(charm, Bullbasaur.Movimientos.LATIGO.ordinal());
-
-        /////////////////////////////////////////////////////////////////////////////////////
-        System.out.println("------------------------------------------------------");
-        System.out.println("------------------------------------------------------");
-        System.out.println("------------------------------------------------------");
-        System.out.println("------------------------------------------------------");
+        //////////////////////////////////////////////////
         Wartortle wart = new Wartortle();
-        Charmeleon charmi = new Charmeleon();
-        Gengar Geng = new Gengar();
+        Ivysaur ivy = new Ivysaur();
+        Charmeleon Charmi = new Charmeleon();
+        //////////////////////////////////////////////////
+        //Instanciar entrenadores y que capturen pokemons
+        Entrenador ent1 = new Entrenador("Hannia");
+        ent1.capturarPokemon(pika);
+        ent1.capturarPokemon(bullb);
 
-        System.out.println("->Charmeleon va caminando entre la hierva y  se encuentra con un Wartortle,"
-                + " charmeleon lo ataca");
-        charmi.atacar(wart, Charmeleon.Movimientos.ASCUAS.ordinal());
+        Entrenador ent2 = new Entrenador("Stacy");
+        ent2.capturarPokemon(charm);
+        System.out.println("////////////////////////////"
+                + "////////////////////////////"
+                + "////////////////////////////");
+        //Instanciar batalla e iniciarla.
+        Batalla b = new Batalla(ent1, ent2);
+        b.desarrollarBatalla();
+        
+        ///////////////////////////////////////////////////
+        //Instanciar entrenadores y que capturen pokemons
+        Entrenador ent3 = new Entrenador("Arnold");
+        ent1.capturarPokemon(pika);
+        ent1.capturarPokemon(ivy);
 
-        System.out.println("------------------------------------------------------");
-
-        System.out.println("->Wartortle se molesta y tambien ataca ");
-        wart.atacar(charmi, Wartortle.Movimientos.PISTOLA_AGUA.ordinal());
-
-        System.out.println("------------------------------------------------------");
-
-        System.out.println("->Gengar se mete a la pelea porque estan "
-                + "dandole una golpisa a Charmeleon y ataca...");
-        Geng.atacar(wart, Gengar.Movimientos.BOLA_SOMBRA.ordinal());
-
+        Entrenador ent4 = new Entrenador("Topo");
+        ent2.capturarPokemon(Charmi);
+        ent2.capturarPokemon(wart);
+        
+        //Instanciar batalla e iniciarla.
+        Batalla Examen = new Batalla(ent3, ent4);
+        b.desarrollarBatalla();
+        
     }
 
 }
