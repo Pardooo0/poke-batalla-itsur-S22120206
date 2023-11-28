@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
@@ -15,7 +16,7 @@ import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Charmander extends Pokemon {
+public class Charmander extends Pokemon implements Serializable{
 
     /**
      * Movimientos que puede realizar el Pokémon

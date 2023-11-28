@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.GolpeKarate;
@@ -16,7 +17,7 @@ import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Gengar extends Pokemon {
+public class Gengar extends Pokemon implements Serializable{
 
     public enum Movimientos {
         BOLA_SOMBRA,

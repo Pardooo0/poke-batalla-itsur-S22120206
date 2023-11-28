@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
@@ -14,7 +15,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Teletransporte;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Abra extends Pokemon {
+public class Abra extends Pokemon implements Serializable {
 
     public enum Movimientos {
         TELETRANSPORTE,

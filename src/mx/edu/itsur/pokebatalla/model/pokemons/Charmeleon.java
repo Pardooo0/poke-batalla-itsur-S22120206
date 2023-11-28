@@ -5,6 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Ascuas;
 import mx.edu.itsur.pokebatalla.model.moves.BolaSombra;
@@ -16,7 +17,7 @@ import mx.edu.itsur.pokebatalla.model.moves.RayoConfuso;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Charmeleon extends Pokemon {
+public class Charmeleon extends Pokemon implements Serializable{
 
     public enum Movimientos {
         ASCUAS,

@@ -3,14 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model.battles;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.Serializable;
+import mx.edu.itsur.pokebatalla.model.ControlArchivos.FileManager;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Batalla {
+public class Batalla implements Serializable{
 
     //Atributos
     protected Entrenador entrenador1;
@@ -25,6 +28,9 @@ public class Batalla {
     }
 
     //Metodos
+    public void salvarProgreso() {
+        FileManager.guardarPartida(this);
+    }
     public void desarrollarBatalla() {
         //Variables que se utilizarán
         Entrenador entrenadorEnTurno = null;

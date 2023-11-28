@@ -5,6 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
@@ -15,7 +16,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Placaje;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Ivysaur extends Pokemon {
+public class Ivysaur extends Pokemon implements Serializable{
 
     public enum Movimientos {
         PLACAJE,

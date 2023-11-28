@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.Confusion;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.PistolaAgua;
@@ -13,7 +14,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Placaje;
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Jigglypuff extends Pokemon {
+public class Jigglypuff extends Pokemon implements Serializable{
 
     public enum Movimientos {
         CONFUSION,

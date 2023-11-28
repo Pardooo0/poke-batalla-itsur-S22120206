@@ -26,6 +26,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello PokeBatalla!");
         
+        
         //Instanciar pokemons
         Pikachu pika = new Pikachu();
         Charmander charm = new Charmander();
@@ -61,7 +62,7 @@ public class Main {
         
         //Instanciar batalla e iniciarla.
         Batalla Examen = new Batalla(ent3, ent4);
-        b.desarrollarBatalla();
+        Examen.desarrollarBatalla();
         
     }
 

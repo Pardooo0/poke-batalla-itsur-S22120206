@@ -6,13 +6,14 @@ package mx.edu.itsur.pokebatalla.model.battles;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
  *
  * @author RAFAEL CASTRO TINOCO
  */
-public class Entrenador {
+public class Entrenador implements Serializable {
 
     //Atributos
     protected String nombre;
