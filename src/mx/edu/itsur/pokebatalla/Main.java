@@ -25,6 +25,7 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Hello PokeBatalla!");
+        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
         
         
         //Instanciar pokemons
@@ -37,31 +38,22 @@ public class Main {
         Charmeleon Charmi = new Charmeleon();
         //////////////////////////////////////////////////
         //Instanciar entrenadores y que capturen pokemons
-        Entrenador ent1 = new Entrenador("Hannia");
-        ent1.capturarPokemon(pika);
-        ent1.capturarPokemon(bullb);
 
-        Entrenador ent2 = new Entrenador("Stacy");
-        ent2.capturarPokemon(charm);
-        System.out.println("////////////////////////////"
-                + "////////////////////////////"
-                + "////////////////////////////");
         //Instanciar batalla e iniciarla.
-        Batalla b = new Batalla(ent1, ent2);
-        b.desarrollarBatalla();
+        
         
         ///////////////////////////////////////////////////
         //Instanciar entrenadores y que capturen pokemons
-        Entrenador ent3 = new Entrenador("Arnold");
+        Entrenador ent1 = new Entrenador("Arnold");
         ent1.capturarPokemon(pika);
         ent1.capturarPokemon(ivy);
 
-        Entrenador ent4 = new Entrenador("Topo");
+        Entrenador ent2 = new Entrenador("El del bigotito");
         ent2.capturarPokemon(Charmi);
         ent2.capturarPokemon(wart);
         
         //Instanciar batalla e iniciarla.
-        Batalla Examen = new Batalla(ent3, ent4);
+        Batalla Examen = new Batalla(ent1, ent2);
         Examen.desarrollarBatalla();
         
     }

@@ -37,18 +37,23 @@ public class Entrenador implements Serializable {
         this.pokemonActual.atacar(oponente, ordinalMovimiento);
     }
 
-     public boolean estaDerrotado() 
-    {
-        int sumaHP = 0;
-        for (Pokemon pokemon : pokemonsCapturados) {
-            sumaHP += pokemon.getHP();
+    public boolean estaDerrotado() {
+    for (Pokemon pokemon : pokemonsCapturados) {
+        if (pokemon.getHP() > 0) {
+            // Si al menos un Pokémon tiene HP mayor que 0, el entrenador no está derrotado
+            return false;
+        }else{
+            pokemon.setHp(0);
         }
-        
-        return (sumaHP <= 0);
     }
+    // Si ningún Pokémon tiene HP mayor que 0, el entrenador está derrotado
+    return true;
+}
+
 
     //GYS
     public String getNombre() {
+        
         return nombre;
     }
 
