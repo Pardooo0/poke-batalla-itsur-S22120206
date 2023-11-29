@@ -34,6 +34,7 @@ public class Entrenador implements Serializable {
 
      public void instruirMovimientoAlPokemonActual(Pokemon oponente, int ordinalMovimiento)
     {
+        if(ordinalMovimiento>=0)
         this.pokemonActual.atacar(oponente, ordinalMovimiento);
     }
 

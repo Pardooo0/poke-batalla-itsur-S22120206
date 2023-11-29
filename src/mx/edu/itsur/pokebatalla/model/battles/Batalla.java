@@ -45,6 +45,7 @@ public class Batalla implements Serializable {
         // La primera vez ambos entrenadores se elegirán Pokémon
         // 1. El primer entrenador selecciona su pokemon.
         do {
+ 
             try {
                 seleccionarPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
@@ -86,12 +87,19 @@ public class Batalla implements Serializable {
                 System.out.println("\u001B[31mDeseas cambiar de Pokemon?");
                 System.out.println("1 -> NO");
                 System.out.println("2 -> SI");
+                System.out.println("\u001B[31mDeseas guardar la partida?");
+                System.out.println("Y -> SI");
+                System.out.println("N -> NO");
                 try {
                     char auxLectura = (char) System.in.read(); // Leer opción seleccionada
                     System.in.read(new byte[System.in.available()]); // Limpiar buffer
 
                     if (auxLectura == '2') {
                         seleccionarPokemon(entrenadorEnTurno);
+                    }
+                    else if(auxLectura=='Y'){
+                        salvarProgreso();
+                        return;
                     }
                 } catch (IOException ex) {
                     ex.printStackTrace();
@@ -120,8 +128,10 @@ public class Batalla implements Serializable {
                     System.out.println(entrenadorOponente.getNombre() + " esta derrotado!!!");
                     System.out.println("\u001B[31mFelicidades " + entrenadorEnTurno.getNombre() + "!! HAS GANADO LA BATALLA!!!");
                     batallaFinalizada = true;
+                
                 } else {
                     // 5. Si nadie ha ganado aún, se cambia el turno y repite.
+                    salvarProgreso();
                     if (turno == 1) {
                         turno = 2;
                     } else {
@@ -178,6 +188,11 @@ public class Batalla implements Serializable {
                         System.out.println("-----------------------------------------");
                         kk=true;
                     } else {
+                        if(ent.getPokemonsCapturados().get(0).getHP()==0 && ent.getPokemonsCapturados().get(1).getHP()==0){
+                            System.out.println("ya perdiste tilin");
+                            
+                            return;
+                        }
                         System.out.println("");
                         System.out.println("\u001B[31mTu pokemon se debilito cambialo");
                     }
