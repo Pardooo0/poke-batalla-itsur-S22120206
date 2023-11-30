@@ -10,7 +10,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import mx.edu.itsur.pokebatalla.model.battles.Batalla;
 
-
 public class FileManager {
 
     public static final String PARTIDA_FILE_NAME = "partida.txt";
@@ -23,7 +22,7 @@ public class FileManager {
         }
     }
 
-    public static Batalla leerPartida() {
+    public static Batalla cargarPartida() {
         Batalla x = null;
         try (ObjectInputStream lectorDeObjetos = new ObjectInputStream(new FileInputStream(PARTIDA_FILE_NAME))) {
             x = (Batalla) lectorDeObjetos.readObject();
@@ -33,12 +32,36 @@ public class FileManager {
         }
         return x;
     }
-    
+
     public static void borrarPartida() {
+        File file = new File(PARTIDA_FILE_NAME);
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Partida anterior eliminada.");
+            } else {
+                System.out.println("No se pudo eliminar la partida anterior.");
+            }
+        }
+    }
+    
+    public static void borrarPartidaSiNoContinuar() {
     File file = new File(PARTIDA_FILE_NAME);
     if (file.exists()) {
-        file.delete();
-        System.out.println("Partida anterior eliminada.");
+        System.out.println("¿Deseas eliminar el archivo de partida? (Y/N)");
+        try {
+            char respuestaEliminar = (char) System.in.read();
+            System.in.read(new byte[System.in.available()]);
+
+            if (respuestaEliminar == 'Y' || respuestaEliminar == 'y') {
+                borrarPartida();
+                System.out.println("Archivo eliminado.");
+            } else {
+                System.out.println("El archivo no ha sido eliminado.");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
+
 }

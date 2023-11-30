@@ -45,7 +45,7 @@ public class Batalla implements Serializable {
         // La primera vez ambos entrenadores se elegirán Pokémon
         // 1. El primer entrenador selecciona su pokemon.
         do {
- 
+
             try {
                 seleccionarPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
@@ -96,8 +96,7 @@ public class Batalla implements Serializable {
 
                     if (auxLectura == '2') {
                         seleccionarPokemon(entrenadorEnTurno);
-                    }
-                    else if(auxLectura=='Y'){
+                    } else if (auxLectura == 'Y') {
                         salvarProgreso();
                         return;
                     }
@@ -127,8 +126,39 @@ public class Batalla implements Serializable {
                     // Si terminó, se ha terminado la batalla.
                     System.out.println(entrenadorOponente.getNombre() + " esta derrotado!!!");
                     System.out.println("\u001B[31mFelicidades " + entrenadorEnTurno.getNombre() + "!! HAS GANADO LA BATALLA!!!");
+                    // Preguntar al usuario si desea eliminar el archivo
+                    System.out.println("¿Deseas eliminar el archivo de partida? (Y/N)");
+
+                    try {
+                        char respuestaEliminar = (char) System.in.read(); // Leer respuesta del usuario
+                        System.in.read(new byte[System.in.available()]); // Limpiar buffer
+
+                        if (respuestaEliminar == 'Y' || respuestaEliminar == 'y') {
+                            FileManager.borrarPartida(); // Eliminar el archivo
+                            System.out.println("Archivo eliminado.");
+                        } else {
+                            System.out.println("El archivo no ha sido eliminado.");
+                        }
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    try {
+                        char respuestaEliminar = (char) System.in.read(); // Leer respuesta del usuario
+                        System.in.read(new byte[System.in.available()]); // Limpiar buffer
+
+                        if (respuestaEliminar == 'Y' || respuestaEliminar == 'y') {
+                            FileManager.borrarPartida(); // Eliminar el archivo
+                            System.out.println("Archivo eliminado.");
+                        } else {
+                            System.out.println("El archivo no ha sido eliminado.");
+                        }
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    // Fin del juego
                     batallaFinalizada = true;
-                
                 } else {
                     // 5. Si nadie ha ganado aún, se cambia el turno y repite.
                     salvarProgreso();
@@ -186,11 +216,11 @@ public class Batalla implements Serializable {
                         ent.setPokemonActual(pokemonSeleccionado);
                         System.out.println(ent.nombre + " ha seleccionado a: " + ent.getPokemonActual());
                         System.out.println("-----------------------------------------");
-                        kk=true;
+                        kk = true;
                     } else {
-                        if(ent.getPokemonsCapturados().get(0).getHP()==0 && ent.getPokemonsCapturados().get(1).getHP()==0){
+                        if (ent.getPokemonsCapturados().get(0).getHP() == 0 && ent.getPokemonsCapturados().get(1).getHP() == 0) {
                             System.out.println("ya perdiste tilin");
-                            
+
                             return;
                         }
                         System.out.println("");
