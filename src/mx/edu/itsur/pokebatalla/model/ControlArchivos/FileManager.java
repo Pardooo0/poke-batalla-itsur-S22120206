@@ -10,6 +10,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import mx.edu.itsur.pokebatalla.model.battles.Batalla;
 
+/**
+ *
+ * @author Rafael Castro Tinoco
+ */
+
 public class FileManager {
 
     public static final String PARTIDA_FILE_NAME = "partida.txt";
